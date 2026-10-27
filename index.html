@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стоматология Denta — Клиника современной стоматологии в Ташкенте</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0A84FF;
+            --primary-dark: #0066CC;
+            --accent: #00C7BE;
+            --dark: #1C1C1E;
+            --light-bg: #F2F2F7;
+            --white: #FFFFFF;
+            --gray: #8E8E93;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--dark);
+            text-decoration: none;
+        }
+
+        .logo i {
+            color: var(--primary);
+            font-size: 28px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn {
+            background: var(--primary);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(10, 132, 255, 0.3);
+        }
+
+        .hero {
+            padding: 140px 20px 80px;
+            background: linear-gradient(135deg, #E5F1FF 0%, #F2F2F7 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .badge-rating {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            padding: 8px 16px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .stars {
+            color: #FFCC00;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .hero-title span {
+            color: var(--primary);
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .promo-card {
+            background: #34C759;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 25px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(52, 199, 89, 0.3);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        .services {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-price {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-top: 15px;
+        }
+
+        .contacts {
+            background: var(--white);
+            padding: 80px 20px;
+        }
+
+        .contacts-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 18px;
+        }
+
+        .contact-item i {
+            width: 40px;
+            height: 40px;
+            background: #E5F1FF;
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero-container, .contacts-container {
+                grid-template-columns: 1fr;
+            }
+            .hero-title {
+                font-size: 32px;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-tooth"></i>
+                DENTA
+            </a>
+            <ul class="nav-links">
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#about">О клинике</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+            <a href="tel:+998900240420" class="btn"><i class="fa-solid fa-phone"></i> +998 90 024 04 20</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div>
+                <div class="badge-rating">
+                    <span class="stars">★★★★★</span>
+                    <span>5.0 (454 оценки, 292 отзыва)</span>
+                </div>
+                <div class="promo-card">
+                    🎁 БЕСПЛАТНО: Осмотр и консультация врача
+                </div>
+                <h1 class="hero-title">Здоровая и белоснежная улыбка в <span>Ташкенте</span></h1>
+                <p class="hero-subtitle">Современное лечебное оборудование, индивидуальный подход и безболезненные процедуры в стоматологии Denta.</p>
+                <a href="#contacts" class="btn" style="padding: 16px 32px; font-size: 18px;">Записаться на прием</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2 class="section-title">Наши услуги и цены</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Имплантация зубов</h3>
+                <p>Бесшовная установка премиум имплантов</p>
+                <div class="service-price">250$ <span style="text-decoration: line-through; color: #aaa; font-size: 16px;">400$</span></div>
+            </div>
+            <div class="service-card">
+                <h3>Керамические брекеты</h3>
+                <p>Исправление прикуса незаметными брекетами</p>
+                <div class="service-price">250$ / челюсть</div>
+            </div>
+            <div class="service-card">
+                <h3>Пломбирование зубов</h3>
+                <p>Чистка кариеса и установка фотополимерной пломбы</p>
+                <div class="service-price">300 000 сўм</div>
+            </div>
+            <div class="service-card">
+                <h3>Удаление зуба</h3>
+                <p>Быстрое и полностью безболезненное удаление</p>
+                <div class="service-price">400 000 сўм</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contacts" id="contacts">
+        <div class="contacts-container">
+            <div class="contact-info">
+                <h2>Контакты и Запись</h2>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>массив Киёт, 51 (Напротив метро Минор)</div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>+998 90 024 04 20</div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <div>Открыто ежедневно до 20:00</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
